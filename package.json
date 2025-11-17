@@ -1,0 +1,34 @@
+{
+  "name": "federation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "install-all": "npm-run-all install:host install:react install:vue",
+    "install:host": "cd host-app && npm i",
+    "install:react": "cd remote-react && npm i",
+    "install:vue": "cd remote-vue && npm i",
+    "start": "npm-run-all --parallel start:host start:react start:vue",
+    "start:host": "cd host-app && npm start",
+    "start:react": "cd remote-react && npm start",
+    "start:vue": "cd remote-vue && npm start",
+    "build": "npm-run-all build:host build:react build:vue && node hosting.js",
+    "build:host": "cd host-app && npm run build",
+    "build:react": "cd remote-react && npm run build",
+    "build:vue": "cd remote-vue && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eftsoons/MicroFrontendVite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eftsoons/MicroFrontendVite/issues"
+  },
+  "homepage": "https://github.com/eftsoons/MicroFrontendVite#readme",
+  "description": "",
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
